@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="./todolist.css" rel="stylesheet"/>
+    <script src="./todolist.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- this for boxicon -->
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
+</head>
+<body>
+    <object data="./icon/chevrons-up.svg" width="300" height="300"> </object>
+    <div class="todo-container">
+        <div class="left-container">
+            <div class="on-progess-list-container">
+                <div class="title">
+                    On Progess
+                </div>
+                <div class="on-progess-list" id="inprogess-list">
+                    
+                </div>
+            </div>
+            <div class="pending-list-container" >
+                <div class="title">
+                    Pending
+                </div>
+                <div class="pending-list" id="pending-list">
+
+                </div>
+            </div>
+            <div class="add-new-task-container">
+                <div class="title">
+                    Create New Task
+                </div>
+                <div class="add-new-task">
+                    <form onsubmit="return todo.insertTask(this)">
+                        <div class="form-item">
+                            <label> Task content:</label>
+                            <textarea id="w3review" name="content" rows="4" cols="50" row="5"></textarea>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-item">
+                                <label for="taskStartTime"> End date :</label>
+                                <input type="datetime-local"  name="taskEndTime">
+                            </div>
+                            <div class="form-item">
+                                <button type="submit" > Add Task  </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            
+            <div class="overdue-list-container">
+                <div class="title">
+                    OverDue Task
+                </div>
+                <div class="overdue-list"  id="overdue-list">
+
+                </div>
+            </div>
+            <div class="completed-list-container">
+                <div class="title">
+                    Completed Task
+                </div>
+                <div class="completed-list" id="completed-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script defer >
+    let todo = new TodoList("pending-list" , "overdue-list" , "completed-list", "inprogess-list");
+
+    feather.replace({ width : "22px"})
+</script>
+    <script >
+    
+    </script>
+</body>
+</html>
